@@ -1,0 +1,58 @@
+37 4 65 
+63 96 35 
+Az 1. számú ládába 2 db tárgy került elhelyezésre 
+ 
+83 15 82 
+4 14 3 
+4 64 6 
+9 7 9 
+Az 2. számú ládába 4 db tárgy került elhelyezésre 
+ 
+92 52 12 
+4 38 7 
+1 8 11 
+2 1 53 
+1 1 17 
+Az 3. számú ládába 5 db tárgy került elhelyezésre 
+ 
+100 100 100 
+Az 4. számú ládába 1 db tárgy került elhelyezésre 
+ 
+30 43 40 
+9 20 16 
+11 11 41 
+40 23 1 
+10 3 2 
+Az 5. számú ládába 5 db tárgy került elhelyezésre 
+ 
+66 96 53 
+6 2 5 
+19 1 9 
+9 1 33 
+Az 6. számú ládába 4 db tárgy került elhelyezésre 
+ 
+25 49 19 
+49 26 35 
+5 7 12 
+14 4 9 
+6 5 1 
+1 9 24 
+Az 7. számú ládába 6 db tárgy került elhelyezésre 
+ 
+70 42 36 
+8 36 21 
+19 10 4 
+3 12 39 
+Az 8. számú ládába 4 db tárgy került elhelyezésre 
+ 
+58 31 83 
+6 15 12 
+35 43 2 
+1 11 3 
+Az 9. számú ládába 4 db tárgy került elhelyezésre 
+ 
+73 33 47 
+Az 10. számú ládába 1 db tárgy került elhelyezésre 
+ 
+Az 36 db tárgyat optimálisan 10 ládába tudjuk elpakolni 
+ 
