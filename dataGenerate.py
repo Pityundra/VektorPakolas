@@ -40,6 +40,9 @@ def dataClass(className, b1, b2, b3, i, ws, wl, hs, hl, ds, dl):
     b2 = b2
     b3 = b3
 
+    r = open("data\FileNames.txt", "a")
+    r.write(f"data\{className}_{i}.txt\n")
+
     f = open(f"data\{className}_{i}.txt", "w")
     f.write(str(i) + " \n")
     f.write(str(b1) + " " + str(b2) + " " + str(b3) + " " + " \n")
@@ -49,13 +52,7 @@ def dataClass(className, b1, b2, b3, i, ws, wl, hs, hl, ds, dl):
         d = numpy.random.random_integers(ds, dl)
 
         f.write(str(x + 1) + " " + str(w) + " " + str(h) + " " + str(d) + " \n")
+    r.close()
     f.close()
 
 
-def fileRead():
-    f = open("firstNumbers.txt", "r")
-    lines = f.readlines()
-    for line in lines:
-        x = line.split(" ")
-        print(int(x[1]))
-    f.close()
