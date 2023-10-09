@@ -82,7 +82,7 @@ class Bin:
         return self.items[no]
 
     def addItem(self, item):
-        self.items.append(str(item.number) + " " + str(item.getD1()) + " " + str(item.getD2()) + " " + str(item.getD3()))
+        self.items.append(str(item.number) + " " + str(item.getD1()) + " " + str(item.getD2()) + " " + str(item.getD3()))  # mivan ha itt itemet adok át?
         self.d1Load += item.getD1()
         self.d2Load += item.getD2()
         self.d3Load += item.getD3()

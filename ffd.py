@@ -1,38 +1,42 @@
 from bin import Bin
-from item import itemsSum, itemsAVG
+from item import itemsSum, itemsAVG, itemsProd
 
 
-def FFD(items, centric, SA, binSize, className):
+def FFD(items, centric, SAP, binSize, className):
+    if SAP == "sum":
+        # A kapott tárgyakat a dimenziói összege alapján csökkenő sorrendbe tesszük
+        items.sort(reverse=True, key=itemsSum)
+    elif SAP == "avg":
+        # A kapott tárgyakat a dimenzióik átlaga alapján csökkenő sorrendbe tesszük
+        items.sort(reverse=True, key=itemsAVG)
+    elif SAP == "prod":
+        # A kapott tárgyakat a Prod értéke alapján csökkenő sorrendbe tesszük
+        items.sort(reverse=True, key=itemsProd)
+    else:
+        print("Nem sum, avg vagy prod!")
+        return 1
+
     if centric == "item":
-        return FFDIC(items, SA, binSize, className)
+        return FFDIC(items, SAP, binSize, className)
     elif centric == "bin":
-        return FFDBC(items, SA, binSize, className)
+        return FFDBC(items, SAP, binSize, className)
     else:
         print("Nem bin vagy item!")
         return 1
 
 
 # FFD Item-Centric
-def FFDIC(items, SA, binSize, className):
+def FFDIC(items, SAP, binSize, className):
     if len(items) == 0:
         print("Nincsenek tárgyak!")
         return 1
 
     r = open(f"results\{className}_Results_Steps.txt", "a")
-    r.write(f"\nFFD-IC-{SA}-{className}\n")
+    r.write(f"\nFFD-IC-{SAP}-{className}\n")
 
     itemsCopy = []
     for item in items:
         itemsCopy.append(item)
-
-    if SA == "sum":
-        # A kapott tárgyakat a dimenziói összege alapján csökkenő sorrendbe tesszük
-        itemsCopy.sort(reverse=True, key=itemsSum)
-    elif SA == "avg":
-        itemsCopy.sort(reverse=True, key=itemsAVG)
-    else:
-        print("Nem sum vagy avg!")
-        return 1
 
     for item in itemsCopy:
         r.write(str(item) + "\n")
@@ -68,20 +72,20 @@ def FFDIC(items, SA, binSize, className):
     r.close()
 
     a_r = open("results\All_Results.txt", "a")
-    a_r.write(f"FFD-IC-{SA}, {className}, {len(bins)}\n")
+    a_r.write(f"FFD-IC-{SAP}, {className}, {len(bins)}\n")
     a_r.close()
 
-    return f"Az FFD-IC-{SA} futattva lett a {className}-n!"
+    return f"Az FFD-IC-{SAP} futattva lett a {className}-n!"
 
 
 # FFD Bin-Centric
-def FFDBC(items, SA, binSize, className):
+def FFDBC(items, SAP, binSize, className):
     if len(items) == 0:
         print("Nincsenek tárgyak!")
         return 1
 
     r = open(f"results\{className}_Results_Steps.txt", "a")
-    r.write(f"\nFFD-BC-{SA}-{className}\n")
+    r.write(f"\nFFD-BC-{SAP}-{className}\n")
 
     itemsCopy = []
     itemsCopy2 = []
@@ -90,14 +94,6 @@ def FFDBC(items, SA, binSize, className):
         itemsCopy2.append(item)
         r.write(str(item) + "\n")
     r.write("\n")
-
-    if SA == "sum":
-        # A kapott tárgyakat a dimenziói összege alapján csökkenő sorrendbe tesszük
-        itemsCopy.sort(reverse=True, key=itemsSum)
-    elif SA == "avg":
-        itemsCopy.sort(reverse=True, key=itemsAVG)
-    else:
-        return 1
 
     bins = []   # Felhasznált ládák listája
     openBinIndex = 0  # A ládák indexelésére
@@ -124,7 +120,7 @@ def FFDBC(items, SA, binSize, className):
     r.close()
 
     a_r = open("results\All_Results.txt", "a")
-    a_r.write(f"FFD-BC-{SA}, {className}, {len(bins)}\n")
+    a_r.write(f"FFD-BC-{SAP}, {className}, {len(bins)}\n")
     a_r.close()
 
-    return f"Az FFD-BC-{SA} futattva lett a {className}-n!"
+    return f"Az FFD-BC-{SAP} futattva lett a {className}-n!"

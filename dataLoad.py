@@ -5,7 +5,6 @@ items = []
 
 
 def fileRead(fileName):
-    # f = open("data2/dataWithOpt10_test3.txt", "r")
     f = open(f"{fileName}", "r")
     lines = f.readlines()
     # print(lines)

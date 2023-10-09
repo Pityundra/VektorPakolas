@@ -62,13 +62,13 @@ def checkNewSort(bins):
     for bin in bins:
         if bin.binIndex == leastLoadedBin.binIndex:
             continue
-        for i in range(len(leastLoadedBin.getItems())):
-            if (bin.d1FreeCapacity >= itemsCopy[i].getD1()) and (bin.d2FreeCapacity >= itemsCopy[i].getD2()) and (
-                    bin.d3FreeCapacity >= itemsCopy[i].getD3()):
-                bin.addItem(itemsCopy[i])
-                print(itemsCopy[i])
+        for item in itemsCopy:  # itt belenyúltam a kódba és még nem ellenőriztem le hupsz
+            if (bin.d1FreeCapacity >= item.getD1()) and (bin.d2FreeCapacity >= item.getD2()) and (
+                    bin.d3FreeCapacity >= item.getD3()):
+                bin.addItem(item)
+                print(item)
                 print("\n")
-                itemsCopy.remove(itemsCopy[i])
+                itemsCopy.remove(item)
         if not itemsCopy:
             bins.sort(key=binIndex)
             bins.remove(leastLoadedBin)

@@ -13,7 +13,7 @@ def GH(items, alg, binSize, grasp, className):
 
     bins = []  # Felhasznált ládák listája
     binsIndex = 0  # A ládák indexelésére
-    bins.append(Bin(binsIndex + 1, binSize[0], binSize[1], binSize[2]))  # Itt majd még meg kell csinálni hogy a fileból olvassa be a méretet
+    bins.append(Bin(binsIndex + 1, binSize[0], binSize[1], binSize[2]))
     # r(t) jelöli a jelenleg nyitott ládák fennmaradó kapacitás vektorát => bins[].d1FreeCapacity
     allWeight = []  # [item] [bin] [weight]
 
@@ -56,7 +56,7 @@ def GH(items, alg, binSize, grasp, className):
             itemChosenNo = len(allWeight)-1
 
         r.write(f"Ezt a tárgyat teszük el: {allWeight[itemChosenNo].item}\n")
-        bins[int(allWeight[0].bin.binIndex - 1)].addItem(allWeight[itemChosenNo].item)
+        bins[int(allWeight[itemChosenNo].bin.binIndex - 1)].addItem(allWeight[itemChosenNo].item)
         r.write(f"Ebbe a ládába tettük a tárgyat: {bins[int(allWeight[itemChosenNo].bin.binIndex - 1)]}\n")
         r.write("\n")
 

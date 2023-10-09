@@ -26,7 +26,7 @@ def dataWithOpt(i, binNumber, bd1, bd2, bd3):
             bSum = b1 + b2 + b3
             itemInBin = 0
             while bSum > 0:
-                n1 = numpy.random.random_integers(1, b1)  # item dimesion size
+                n1 = numpy.random.random_integers(1, b1)
                 n2 = numpy.random.random_integers(1, b2)
                 n3 = numpy.random.random_integers(1, b3)
 
