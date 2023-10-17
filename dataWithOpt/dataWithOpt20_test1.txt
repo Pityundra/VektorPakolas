@@ -1,0 +1,152 @@
+A ládák dimenziói maximális kapacitása: 
+1000 1000 1000 
+
+1 365 204 773 
+2 205 672 116 
+3 140 98 11 
+4 121 23 61 
+5 169 3 39 
+Az 1. számú ládába 5 db tárgy került elhelyezésre 
+ 
+6 846 873 657 
+7 55 21 337 
+8 64 68 4 
+9 35 38 2 
+Az 2. számú ládába 4 db tárgy került elhelyezésre 
+ 
+10 452 49 152 
+11 271 694 316 
+12 176 103 32 
+13 23 43 420 
+14 6 43 70 
+15 42 52 9 
+16 30 16 1 
+Az 3. számú ládába 7 db tárgy került elhelyezésre 
+ 
+17 423 260 766 
+18 434 620 229 
+19 68 65 4 
+20 75 55 1 
+Az 4. számú ládába 4 db tárgy került elhelyezésre 
+ 
+21 692 413 791 
+22 230 9 96 
+23 18 87 28 
+24 9 111 80 
+25 20 332 4 
+26 31 48 1 
+Az 5. számú ládába 6 db tárgy került elhelyezésre 
+ 
+27 326 853 575 
+28 645 5 52 
+29 16 81 30 
+30 4 49 253 
+31 2 1 63 
+32 6 5 10 
+33 1 6 17 
+Az 6. számú ládába 7 db tárgy került elhelyezésre 
+ 
+34 733 227 501 
+35 73 224 108 
+36 52 3 202 
+37 13 458 57 
+38 125 80 107 
+39 3 6 1 
+40 1 2 24 
+Az 7. számú ládába 7 db tárgy került elhelyezésre 
+ 
+41 342 99 861 
+42 385 161 7 
+43 80 439 33 
+44 18 252 56 
+45 110 24 3 
+46 18 22 18 
+47 47 3 22 
+Az 8. számú ládába 7 db tárgy került elhelyezésre 
+ 
+48 290 488 219 
+49 434 453 23 
+50 258 42 24 
+51 8 4 396 
+52 10 13 338 
+Az 9. számú ládába 5 db tárgy került elhelyezésre 
+ 
+53 655 878 491 
+54 191 88 361 
+55 104 5 74 
+56 26 2 52 
+57 8 16 6 
+58 16 11 16 
+Az 10. számú ládába 6 db tárgy került elhelyezésre 
+ 
+59 579 267 331 
+60 95 442 294 
+61 193 162 189 
+62 2 106 14 
+63 102 13 54 
+64 29 10 118 
+Az 11. számú ládába 6 db tárgy került elhelyezésre 
+ 
+65 617 399 382 
+66 326 556 96 
+67 34 7 256 
+68 17 30 91 
+69 5 6 88 
+70 1 2 87 
+Az 12. számú ládába 6 db tárgy került elhelyezésre 
+ 
+71 21 286 517 
+72 711 174 293 
+73 79 32 41 
+74 163 448 78 
+75 4 58 29 
+76 17 1 29 
+77 5 1 13 
+Az 13. számú ládába 7 db tárgy került elhelyezésre 
+ 
+78 848 7 202 
+79 104 456 775 
+80 5 11 17 
+81 42 442 1 
+82 1 84 5 
+Az 14. számú ládába 5 db tárgy került elhelyezésre 
+ 
+83 316 49 861 
+84 29 553 96 
+85 238 82 22 
+86 129 62 14 
+87 188 43 6 
+88 100 211 1 
+Az 15. számú ládába 6 db tárgy került elhelyezésre 
+ 
+89 312 477 659 
+90 54 416 193 
+91 509 76 143 
+92 54 21 1 
+93 71 10 4 
+Az 16. számú ládába 5 db tárgy került elhelyezésre 
+ 
+94 499 16 297 
+95 409 935 394 
+96 5 16 127 
+97 37 16 15 
+98 50 17 167 
+Az 17. számú ládába 5 db tárgy került elhelyezésre 
+ 
+99 726 37 10 
+100 116 478 266 
+101 153 215 89 
+102 5 270 635 
+Az 18. számú ládába 4 db tárgy került elhelyezésre 
+ 
+103 74 784 463 
+104 909 61 164 
+105 11 47 287 
+106 6 108 86 
+Az 19. számú ládába 4 db tárgy került elhelyezésre 
+ 
+107 348 84 688 
+Az 20. számú ládába 1 db tárgy került elhelyezésre 
+ 
+Az 108 db tárgyat optimálisan 20 ládába tudjuk elpakolni 
+ 
