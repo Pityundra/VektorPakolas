@@ -1,4 +1,4 @@
-import numpy
+import numpy as np
 
 
 def generateClasses():
@@ -18,13 +18,13 @@ def generateClasses():
         # a Class4 és 5 esetén az 5 darabosnak nem lesz sok haszna emrt mindig bele dog férni egy ládába, de a többinél jó tesztesetek lehetnek manuális ellenőrzésre
 
         # Class6: Ládák mindegyik dimenziója 100 és a tárgyak dimenziói rendre [1,1/2*LádaMéret][2/3*LádaMéret,LádaMéret][2/3*LádaMéret,LádaMéret]
-        dataClass("class6", 100, 100, 100, i, 1, 50, 66, 100, 66, 100)
+        # dataClass("class6", 100, 100, 100, i, 1, 50, 66, 100, 66, 100)
         # Class7: Ládák mindegyik dimenziója 100 és a tárgyak dimenziói rendre [2/3*LádaMéret,LádaMéret][1,1/2*LádaMéret][2/3*LádaMéret,LádaMéret]
-        dataClass("class7", 100, 100, 100, i, 66, 100, 1, 50, 66, 100)
+        # dataClass("class7", 100, 100, 100, i, 66, 100, 1, 50, 66, 100)
         # Class8: Ládák mindegyik dimenziója 100 és a tárgyak dimenziói rendre [2/3*LádaMéret,LádaMéret][2/3*LádaMéret,LádaMéret][1,1/2*LádaMéret]
-        dataClass("class8", 100, 100, 100, i, 66, 100, 66, 100, 1, 50)
+        # dataClass("class8", 100, 100, 100, i, 66, 100, 66, 100, 1, 50)
         # Class9: Ládák mindegyik dimenziója 100 és a tárgyak dimenziói rendre [1/2*LádaMéret,100][1/2*LádaMéret,LádaMéret][1/2*LádaMéret,LádaMéret]
-        dataClass("class9", 100, 100, 100, i, 50, 100, 50, 100, 50, 100)
+        # dataClass("class9", 100, 100, 100, i, 50, 100, 50, 100, 50, 100)
         # Class10: Ládák mindegyik dimenziója 100 és a tárgyak dimenziói rendre [1,1/2*LádaMéret][1,1/2*LádaMéret][1,1/2*LádaMéret]
         dataClass("class10", 100, 100, 100, i, 1, 50, 1, 50, 1, 50)
 
@@ -47,12 +47,27 @@ def dataClass(className, b1, b2, b3, i, ws, wl, hs, hl, ds, dl):
     f.write(str(i) + " \n")
     f.write(str(b1) + " " + str(b2) + " " + str(b3) + " " + " \n")
     for x in range(i):
-        w = numpy.random.random_integers(ws, wl)
-        h = numpy.random.random_integers(hs, hl)
-        d = numpy.random.random_integers(ds, dl)
+        w = np.random.random_integers(ws, wl)
+        h = np.random.random_integers(hs, hl)
+        d = np.random.random_integers(ds, dl)
 
         f.write(str(x + 1) + " " + str(w) + " " + str(h) + " " + str(d) + " \n")
     r.close()
     f.close()
 
 
+def dataClass2(className, binMax, db):
+    print(f"{className}\n")
+    for i in range(db):
+        w = np.random.random_integers((2/3)*binMax, binMax)
+        h = np.random.random_integers(1, binMax/2)
+        d = np.random.random_integers(1, binMax/2)
+        # Egy nagy dimenzió és egy kicsi
+
+        rnd = np.random.random_integers(1, 3)
+        if rnd == 1:
+            print(str(w) + " " + str(h) + " " + str(d) + " \n")
+        elif rnd == 2:
+            print(str(h) + " " + str(w) + " " + str(d) + " \n")
+        else:
+            print(str(h) + " " + str(d) + " " + str(w) + " \n")

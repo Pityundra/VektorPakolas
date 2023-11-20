@@ -22,7 +22,7 @@ def GH(items, alg, binSize, grasp, className):
     for item in items:
         itemsCopy.append(item)
 
-    while len(itemsCopy) > 0:
+    while len(itemsCopy):
         for item in itemsCopy:
             for bin in bins:
                 if (bin.d1FreeCapacity >= item.getD1()) and (bin.d2FreeCapacity >= item.getD2()) and (bin.d3FreeCapacity >= item.getD3()):

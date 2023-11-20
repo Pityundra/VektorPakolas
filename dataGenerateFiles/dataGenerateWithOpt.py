@@ -11,7 +11,7 @@ def dataGen():
 
 def dataWithOpt(i, binNumber, bd1, bd2, bd3):
     for y in range(i):
-        f = open(f"dataWithOpt\dataWithOpt{binNumber}_test{y + 1}.txt", "w")
+        f = open(f"dataOpt\dataOpt{binNumber}_test{y + 1}.txt", "w")
 
         f.write("A ládák dimenziói maximális kapacitása: \n")
         f.write(f"{bd1} {bd2} {bd3}")
@@ -51,7 +51,7 @@ def dataWithOpt(i, binNumber, bd1, bd2, bd3):
             f.write(f"Az {x + 1}. számú ládába {itemInBin} db tárgy került elhelyezésre" + " \n" + " \n")
         f.write(f"Az {sumItem-1} db tárgyat optimálisan {x + 1} ládába tudjuk elpakolni" + " \n" + " \n")
 
-        r = open("../dataWithOpt/FileNames.txt", "a")
-        r.write(f"dataWithOpt\dataWithOpt{binNumber}_test{y + 1}.txt\n")
+        r = open("../dataOpt/FileNames.txt", "a")
+        r.write(f"dataOpt\dataOpt{binNumber}_test{y + 1}.txt\n")
         r.close()
         f.close()

@@ -28,8 +28,8 @@ def min_bin(items, binSize, className):
     LB3 = ceil(SI3 / binSize[1])
 
     LB = max(LB1, LB2, LB3)
-    UB = len(
-        items)  # a DotProduct értékét vettéka cikben, jelenleg nem látom értelmét, mert nem lenne túl sok opció amit megvizsgálnánk
+    UB = len(items)
+    # a DotProduct értékét vettéka cikben, jelenleg nem látom értelmét, mert nem lenne túl sok opció amit megvizsgálnánk
 
     r.write(f"Alsó korlát: {LB}, Felős korlát: {UB}\n")
 
@@ -66,7 +66,7 @@ def checkNewSort(bins, className):
         ldItem = leastLoadedBin.getItem(i)
         data = ldItem.split(" ")
         itemsCopy.append(Item(int(data[0]), int(data[1]), int(data[2]), int(data[3])))
-    print(str(len(itemsCopy)) + "\n")
+    # print(str(len(itemsCopy)) + "\n")
 
     bins.sort(reverse=True, key=binLoadSum)
     for bin in bins:

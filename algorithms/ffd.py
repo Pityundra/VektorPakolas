@@ -96,11 +96,11 @@ def FFDBC(items, SAP, binSize, className):
     openBinIndex = 0  # A ládák indexelésére
 
     while len(itemsCopy2) > 0:
-        # r.write(str(len(itemsCopy)))
         bins.append(Bin(openBinIndex + 1, binSize[0], binSize[1], binSize[2]))
         for item in itemsCopy:
             # Ha belefér egy item a nyitott ládába akkor beleteszi és kiveszi a listából
-            if item in itemsCopy2 and (bins[openBinIndex].d1FreeCapacity >= item.getD1()) and (bins[openBinIndex].d2FreeCapacity >= item.getD2()) and (bins[openBinIndex].d3FreeCapacity >= item.getD3()):
+            if item in itemsCopy2 and (bins[openBinIndex].d1FreeCapacity >= item.getD1()) \
+                    and (bins[openBinIndex].d2FreeCapacity >= item.getD2()) and (bins[openBinIndex].d3FreeCapacity >= item.getD3()):
                 r.write(str(item) + "\n")
                 bins[openBinIndex].addItem(item)
                 r.write(f"A [{item.getNumber()}] tárgyat elrakjuk a {bins[openBinIndex].binIndex} számú nyitott ládába!\n")
