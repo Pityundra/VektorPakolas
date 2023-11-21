@@ -45,6 +45,58 @@ def FFDRev(items, binSize):
     return len(bins)
 
 
+def FFDRevAdv(items, binSize):
+    if len(items) == 0:
+        print("Nincsenek tárgyak!")
+        return 1
+
+    items.sort(reverse=True, key=itemsSum)
+    rev = False
+
+    itemsCopy = []
+    for item in items:
+        itemsCopy.append(item)
+
+    bins = []  # Felhasznált ládák listája
+    binsIndex = 0  # A ládák indexelésére
+    bins.append(Bin(binsIndex + 1, binSize[0], binSize[1], binSize[2]))
+
+    while len(itemsCopy):
+        # print(i)
+        item = itemsCopy[0]
+        bin, binsIndex = placeItem(item, bins, binsIndex, binSize)
+        # print("nagy")
+        itemsCopy.remove(item)
+
+        # for bin in bins:
+        #     print(str(bin) + "\n")
+        # print("\n")
+
+        for bin in bins:
+            if len(itemsCopy) > 0 and (bin.d1FreeCapacity >= itemsCopy[len(itemsCopy)-1].getD1()) and (bin.d2FreeCapacity >= itemsCopy[len(itemsCopy)-1].getD2()) and (
+                    bin.d3FreeCapacity >= itemsCopy[len(itemsCopy)-1].getD3()):
+                bin.addItem(itemsCopy[len(itemsCopy)-1])
+                # print("kicsi")
+                itemsCopy.remove(itemsCopy[len(itemsCopy)-1])
+
+                for i in range(len(itemsCopy)):
+                    # print(i)
+                    item = itemsCopy[0]
+                    bin, binsIndex = placeItem(item, bins, binsIndex, binSize)
+                    # print("vált")
+                    itemsCopy.remove(item)
+                    itemsCopy.sort(reverse=rev, key=itemsSum)
+                    rev = not rev
+
+    # for bin in bins:
+    #     print(str(bin) + "\n")
+    # print("\n")
+    #
+    # print(f"Felhasznált ládák száma: {len(bins)}\n")
+
+    return len(bins)
+
+
 def FFDVal(items, binSize):
     if len(items) == 0:
         print("Nincsenek tárgyak!")
@@ -71,10 +123,10 @@ def FFDVal(items, binSize):
         # print('\n')
 
         number = np.random.random_integers(1, 4)
-        if number == 3:
+        if number == 4:
             item = itemsCopy[len(itemsCopy) - 1]
             # print("vége " + str(len(itemsCopy)))
-        elif number == 2:
+        elif number == 3:
             # print("közepe " + str(ceil((len(itemsCopy)) / 2)))
             item = itemsCopy[round((len(itemsCopy))/2)-1]
         else:

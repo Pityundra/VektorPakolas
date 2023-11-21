@@ -1,0 +1,2 @@
+def badExample():
+    print("anyád")

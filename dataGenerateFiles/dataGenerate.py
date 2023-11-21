@@ -54,20 +54,3 @@ def dataClass(className, b1, b2, b3, i, ws, wl, hs, hl, ds, dl):
         f.write(str(x + 1) + " " + str(w) + " " + str(h) + " " + str(d) + " \n")
     r.close()
     f.close()
-
-
-def dataClass2(className, binMax, db):
-    print(f"{className}\n")
-    for i in range(db):
-        w = np.random.random_integers((2/3)*binMax, binMax)
-        h = np.random.random_integers(1, binMax/2)
-        d = np.random.random_integers(1, binMax/2)
-        # Egy nagy dimenzió és egy kicsi
-
-        rnd = np.random.random_integers(1, 3)
-        if rnd == 1:
-            print(str(w) + " " + str(h) + " " + str(d) + " \n")
-        elif rnd == 2:
-            print(str(h) + " " + str(w) + " " + str(d) + " \n")
-        else:
-            print(str(h) + " " + str(d) + " " + str(w) + " \n")
