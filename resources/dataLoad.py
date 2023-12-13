@@ -5,6 +5,7 @@ items = []
 
 
 def fileRead(fileName):
+    print(fileName)
     f = open(f"{fileName}", "r")
     lines = f.readlines()
     # print(lines)

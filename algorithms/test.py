@@ -30,6 +30,7 @@ def FFDRev(items, binSize):
     for i in range(len(itemsCopy)):
         # print(i)
         item = itemsCopy[0]
+        # print(item)
         bin, binsIndex = placeItem(item, bins, binsIndex, binSize)
         itemsCopy.remove(item)
         itemsCopy.sort(reverse=rev, key=itemsSum)
@@ -39,7 +40,42 @@ def FFDRev(items, binSize):
     # for bin in bins:
     #     print(str(bin) + "\n")
     # print("\n")
+    #
+    # print(f"Felhasznált ládák száma: {len(bins)}\n")
 
+    return len(bins)
+
+
+def FFDRevForBadExample(items, binSize):
+    if len(items) == 0:
+        print("Nincsenek tárgyak!")
+        return 1
+
+    items.sort(reverse=True, key=itemsSum)
+
+    itemsCopy = []
+    for item in items:
+        itemsCopy.append(item)
+
+    bins = []  # Felhasznált ládák listája
+    binsIndex = 0  # A ládák indexelésére
+    bins.append(Bin(binsIndex + 1, binSize[0], binSize[1], binSize[2]))
+
+    while len(itemsCopy):
+        # print(i)
+        itemF = itemsCopy[0]
+        itemL = itemsCopy[len(itemsCopy)-1]
+        # print(itemF)
+        # print(itemL)
+        bin, binsIndex = placeItem(itemF, bins, binsIndex, binSize)
+        bin, binsIndex = placeItem(itemL, bins, binsIndex, binSize)
+        itemsCopy.remove(itemF)
+        itemsCopy.remove(itemL)
+
+    # for bin in bins:
+    #     print(str(bin) + "\n")
+    # print("\n")
+    #
     # print(f"Felhasznált ládák száma: {len(bins)}\n")
 
     return len(bins)
@@ -79,7 +115,7 @@ def FFDRevAdv(items, binSize):
                 # print("kicsi")
                 itemsCopy.remove(itemsCopy[len(itemsCopy)-1])
 
-                for i in range(len(itemsCopy)):
+                while len(itemsCopy):
                     # print(i)
                     item = itemsCopy[0]
                     bin, binsIndex = placeItem(item, bins, binsIndex, binSize)

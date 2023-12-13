@@ -5,8 +5,8 @@ from resources.item import Item
 
 
 def min_bin(items, binSize, className):
-    r = open(f"results\{className}_Results_Steps.txt", "a")
-    r.write(f"\nmin_bin-{className}\n")
+    # r = open(f"results\{className}_Results_Steps.txt", "a")
+    # r.write(f"\nmin_bin-{className}\n")
 
     binsIndex = 0
     bins = []
@@ -31,20 +31,20 @@ def min_bin(items, binSize, className):
     UB = len(items)
     # a DotProduct értékét vettéka cikben, jelenleg nem látom értelmét, mert nem lenne túl sok opció amit megvizsgálnánk
 
-    r.write(f"Alsó korlát: {LB}, Felős korlát: {UB}\n")
+    # r.write(f"Alsó korlát: {LB}, Felős korlát: {UB}\n")
 
     # m = range(LB, UB)
 
-    binPrintToFile(bins, r)
-    r.close()
+    # binPrintToFile(bins, r)
+    # r.close()
 
     isNewSort = True
     while isNewSort:
         bins, isNewSort = checkNewSort(bins, className)
 
-    r = open(f"results\{className}_Results_Steps.txt", "a")
-    r.write(f"Felhasznált ládák száma: {len(bins)}\n")
-    r.close()
+    # r = open(f"results\{className}_Results_Steps.txt", "a")
+    # r.write(f"Felhasznált ládák száma: {len(bins)}\n")
+    # r.close()
 
     a_r = open("results\All_Results.txt", "a")
     a_r.write(f"min_bin, {className}, {len(bins)}\n")
@@ -55,12 +55,12 @@ def min_bin(items, binSize, className):
 
 def checkNewSort(bins, className):
 
-    r = open(f"results\{className}_Results_Steps.txt", "a")
+    # r = open(f"results\{className}_Results_Steps.txt", "a")
 
     bins.sort(reverse=False, key=binLoadSum)
     itemsCopy = []
     leastLoadedBin = bins[0]
-    r.write("A legkevésbé tőltött láda: " + str(leastLoadedBin))
+    # r.write("A legkevésbé tőltött láda: " + str(leastLoadedBin))
 
     for i in range(len(leastLoadedBin.getItems())):
         ldItem = leastLoadedBin.getItem(i)
@@ -76,17 +76,17 @@ def checkNewSort(bins, className):
             if (bin.d1FreeCapacity >= item.getD1()) and (bin.d2FreeCapacity >= item.getD2()) and (
                     bin.d3FreeCapacity >= item.getD3()):
                 bin.addItem(item)
-                r.write(str(item) + "\n")
-                r.write("A " + str(item.getNumber()) + " számú tárgyat át raktuk a " + str(leastLoadedBin.binIndex) + " ládából a " + str(bin.getBinIndex()) + " ládába!\n")
+                # r.write(str(item) + "\n")
+                # r.write("A " + str(item.getNumber()) + " számú tárgyat át raktuk a " + str(leastLoadedBin.binIndex) + " ládából a " + str(bin.getBinIndex()) + " ládába!\n")
                 itemsCopy.remove(item)
         if not itemsCopy:
             bins.remove(leastLoadedBin)
             bins.sort(key=binIndex)
-            binPrintToFile(bins, r)
-            r.close()
+            # binPrintToFile(bins, r)
+            # r.close()
             return bins, True
-    binPrintToFile(bins, r)
-    r.close()
+    # binPrintToFile(bins, r)
+    # r.close()
     return bins, False
 
 

@@ -2,11 +2,14 @@ import numpy
 
 
 def dataGen():
-    dataWithOpt(10, 10, 100, 100, 100)
-
-    dataWithOpt(10, 5, 1000, 1000, 1000)
-
-    dataWithOpt(5, 20, 1000, 1000, 1000)
+    # dataWithOpt(10, 10, 100, 100, 100)
+    #
+    # dataWithOpt(10, 5, 1000, 1000, 1000)
+    #
+    # dataWithOpt(5, 20, 1000, 1000, 1000)
+    dataWithOpt(5, 100, 1000, 1000, 1000)
+    dataWithOpt(5, 500, 1000, 1000, 1000)
+    dataWithOpt(5, 1000, 1000, 1000, 1000)
 
 
 def dataWithOpt(i, binNumber, bd1, bd2, bd3):
@@ -51,7 +54,7 @@ def dataWithOpt(i, binNumber, bd1, bd2, bd3):
             f.write(f"Az {x + 1}. számú ládába {itemInBin} db tárgy került elhelyezésre" + " \n" + " \n")
         f.write(f"Az {sumItem-1} db tárgyat optimálisan {x + 1} ládába tudjuk elpakolni" + " \n" + " \n")
 
-        r = open("../dataOpt/FileNames.txt", "a")
+        r = open("dataOpt/FileNames.txt", "a")
         r.write(f"dataOpt\dataOpt{binNumber}_test{y + 1}.txt\n")
         r.close()
         f.close()

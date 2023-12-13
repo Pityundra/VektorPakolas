@@ -9,8 +9,8 @@ def GH(items, alg, binSize, grasp, className):
         return 1
 
 
-    r = open(f"results\{className}_Results_Steps.txt", "a")
-    r.write(f"\n{alg}-{grasp}-{className}\n")
+    # r = open(f"results\{className}_Results_Steps.txt", "a")
+    # r.write(f"\n{alg}-{grasp}-{className}\n")
 
     bins = []  # Felhasznált ládák listája
     binsIndex = 0  # A ládák indexelésére
@@ -37,7 +37,7 @@ def GH(items, alg, binSize, grasp, className):
         if not allWeight:
             binsIndex += 1
             bins.append(Bin(binsIndex + 1, binSize[0], binSize[1], binSize[2]))
-            r.write(f"Új ládát kell nyitni! Láda szám: {len(bins)}\n")
+            # r.write(f"Új ládát kell nyitni! Láda szám: {len(bins)}\n")
             continue
 
         if alg == "dotP":
@@ -47,27 +47,27 @@ def GH(items, alg, binSize, grasp, className):
         else:
             return 0
 
-        for i in allWeight:
-            r.write(str(i) + "\n")
-        r.write("\n")
+        # for i in allWeight:
+        #     r.write(str(i) + "\n")
+        # r.write("\n")
 
         if grasp <= len(allWeight) or grasp < 0:  # ha a Grasp értéke nagyobb mint a lehetséges elpakolható tágyak szám akkor elrakjuk a legutolsót
             itemChosenNo = grasp-1
         else:
             itemChosenNo = len(allWeight)-1
 
-        r.write(f"Ezt a tárgyat teszük el: {allWeight[itemChosenNo].item}\n")
+        # r.write(f"Ezt a tárgyat teszük el: {allWeight[itemChosenNo].item}\n")
         bins[int(allWeight[itemChosenNo].bin.binIndex - 1)].addItem(allWeight[itemChosenNo].item)
-        r.write(f"Ebbe a ládába tettük a tárgyat: {bins[int(allWeight[itemChosenNo].bin.binIndex - 1)]}\n")
-        r.write("\n")
+        # r.write(f"Ebbe a ládába tettük a tárgyat: {bins[int(allWeight[itemChosenNo].bin.binIndex - 1)]}\n")
+        # r.write("\n")
 
         itemsCopy.remove(allWeight[itemChosenNo].item)
         allWeight.clear()
 
-    binPrintToFile(bins, r)
+    # binPrintToFile(bins, r)
 
-    r.write(f"Felhasznált ládák száma: {len(bins)}\n")
-    r.close()
+    # r.write(f"Felhasznált ládák száma: {len(bins)}\n")
+    # r.close()
 
     a_r = open("results\All_Results.txt", "a")
     a_r.write(f"{alg}-{grasp}, {className}, {len(bins)}\n")

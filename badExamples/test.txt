@@ -1,0 +1,6 @@
+badExamples\epsilon.txt
+badExamples\bad_100_item.txt
+badExamples\bad_200_item.txt
+badExamples\bad_400_item.txt
+badExamples\bad_800_item.txt
+badExamples\bad_1000_item.txt

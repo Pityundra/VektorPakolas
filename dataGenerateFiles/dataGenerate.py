@@ -2,7 +2,8 @@ import numpy as np
 
 
 def generateClasses():
-    itemdb = [5, 25, 50, 100, 200]  # Hány darab tárgy legyen egy példában
+    # itemdb = [5, 25, 50, 100, 200]  # Hány darab tárgy legyen egy példában, az eddig legenárlatakat megtartom csak létrehozok még nagyobbakat is
+    itemdb = [400, 800, 1000]
 
     for i in itemdb:
         # Class1: Ládák mindegyik dimenziója 1000 és a tárgyak mindegyik dimenzióbeli méretei 100 és 400 között van
@@ -28,7 +29,7 @@ def generateClasses():
         # Class10: Ládák mindegyik dimenziója 100 és a tárgyak dimenziói rendre [1,1/2*LádaMéret][1,1/2*LádaMéret][1,1/2*LádaMéret]
         dataClass("class10", 100, 100, 100, i, 1, 50, 1, 50, 1, 50)
 
-        # Class11: Ládák mindegyik dimenziója 40 és a tárgyak mindegyik dimenzióbeli méretei 1 és 10 között van
+        # Class11: Ládák mindegyik dimenziója 10 és a tárgyak mindegyik dimenzióbeli méretei 1 és 10 között van
         dataClass("class11", 10, 10, 10, i, 1, 10, 1, 10, 1, 10)
         # Class12: Ládák mindegyik dimenziója 40 és a tárgyak mindegyik dimenzióbeli méretei 1 és 35 között van
         dataClass("class12", 40, 40, 40, i, 1, 35, 1, 35, 1, 35)
@@ -40,7 +41,7 @@ def dataClass(className, b1, b2, b3, i, ws, wl, hs, hl, ds, dl):
     b2 = b2
     b3 = b3
 
-    r = open("../data/FileNames.txt", "a")
+    r = open("data/FileNames.txt", "a")
     r.write(f"data\{className}_{i}.txt\n")
 
     f = open(f"data\{className}_{i}.txt", "w")

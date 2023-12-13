@@ -13,6 +13,11 @@ def SimpleLowerBound(items, binSize, className):
 
     lowerBound = max(ceil(d1Sum/binSize[0]), ceil(d3Sum/binSize[1]), ceil(d3Sum/binSize[2]))
 
+    if className:
+        r = open(f"results\{className}_Results_Steps.txt", "a")
+        r.write("Az osztályra számolt egyszerű alsó korlát: " + str(lowerBound) + "\n")
+        r.close()
+
     # print(f"A {className} inputon legalább {lowerBound} db láda fog kelleni!")
     """
     Ez ugye azt nem veszi figyelembe ha a tárgyakat nem lehet egymás mellé pakolni így azokban az esetekben
