@@ -80,7 +80,7 @@ def notDetAlgsCall(algName, runTime, items, binSize):
 
 
 def generateExamples():
-    # Itt öszeszedtem milyen függvények meghívásával lehet úly adatokat generálni, vizont ezeknek a függvényeknek a belsején kell állítgatni a tuljadonságokat
+    # Itt öszeszedtem milyen függvények meghívásával lehet új adatokat generálni, vizont ezeknek a függvényeknek a belsején kell állítgatni a tuljadonságokat
     generateClasses()
     dataGen()
     badExamplesgen()
